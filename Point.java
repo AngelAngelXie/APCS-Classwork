@@ -31,4 +31,15 @@ public class Point{
     return result;
   }
 
+  /*Return a string in the format: (x, y)
+  *where x and y are the values from the Point.
+  *e.g.  "(0.0, 1.23)"  or  "(-1.02, 21.45)"
+  */
+  public static String toString(Point A){
+    String result = "";
+    result = "(" + A.x + ", " + A.y + ")";
+    return result;
+  }
+
+
 }

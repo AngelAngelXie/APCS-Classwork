@@ -16,5 +16,8 @@ public class Demo{
     System.out.println(P1.distanceTo(P2)); //call 3 non-static
     // //This one is IMPLIED strongly. You cannot tell by the calling style alone,
     //but you can make an educated guess.
+
+    System.out.println(Point.toString(P1));
+    System.out.println(Point.toString(P2));
   }
  }
