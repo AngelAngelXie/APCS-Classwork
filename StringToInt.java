@@ -2,6 +2,7 @@ import java.lang.Math;
 
 public class StringToInt{
   public static void main(String[]args){
+    System.out.println("Testing positive values");
     System.out.println(stringToInt("1520"));
     System.out.println(stringToInt("0"));
     System.out.println(stringToInt("9999999"));
@@ -10,10 +11,11 @@ public class StringToInt{
     System.out.println(stringToInt("4"));
     System.out.println(stringToInt("19"));
 
+    System.out.println("Testing negative values");
     System.out.println(stringToInt("-27"));
     System.out.println(stringToInt("-9183429"));
     System.out.println(stringToInt("-1"));
-    System.out.println(stringToInt("-80349712937"));
+    System.out.println(stringToInt("-803419739"));
     System.out.println(stringToInt("-4"));
     System.out.println(stringToInt("-765"));
 
@@ -29,15 +31,18 @@ public class StringToInt{
       //return the value of Integer.parseInt(s) but do it yourself!
       //Do not use any built in parse methods.
       if(s.charAt(0) == '-'){
-
+        int result = 0;
+        for(int i = 1; i<s.length(); i++){
+          result +=  valueOfDigit(s.charAt(i)) *(-1)* (int)Math.pow(10, (s.length() -i-1));
+          // System.out.println(result);
+        }return result;
       }
       else{
         int result = 0;
         for(int i = 0; i<s.length(); i++){
           result +=  valueOfDigit(s.charAt(i)) * (int)Math.pow(10, (s.length() -i-1));
           // System.out.println(result);
-        }
-        return result;
+        }return result;
       }
 
   }
